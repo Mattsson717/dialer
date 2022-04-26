@@ -8,6 +8,8 @@ function App() {
     setDigit(digit + value);
   };
 
+  console.log(typeof digit);
+
   const dialBtns = () => {
     const numbers = [];
 
@@ -21,20 +23,20 @@ function App() {
     return numbers;
   };
 
-  let value = document.getElementById('output').value,
-    total = sum;
-
-  const sumDigits = () => {
-    while (value) {
-      total += value % 10;
-      value = Math.floor(value / 10);
-    }
-    let result = document.getElementById('output');
-    result.value = total;
+  const calculate = () => {
+    setDigit(
+      digit
+        .toString()
+        .split('')
+        .map(Number)
+        .reduce(function (a, b) {
+          return a + b;
+        }, 0)
+    );
   };
 
-  const calculate = () => {
-    setSum(sumDigits(total).toString());
+  const clearDialer = () => {
+    setDigit('');
   };
 
   return (
@@ -42,14 +44,17 @@ function App() {
       <section className='dialer'>
         <div className='display'>
           <form>
-            <input type='text' value={digit} id='output' readOnly></input>
+            <input
+              type='text'
+              value={digit || '0'}
+              id='output'
+              readOnly
+            ></input>
           </form>
         </div>
         <div className='operator'>
-          <button onClick={() => updateDisplay({ calculate })}>
-            SUM IT UP
-          </button>
-          <button onClick={() => updateDisplay('0')}>CLEAR</button>
+          <button onClick={calculate}>SUM IT UP</button>
+          <button onClick={clearDialer}>CLEAR</button>
         </div>
         <div className='digits'>
           {dialBtns()}

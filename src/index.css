@@ -45,7 +45,18 @@ main {
   padding: 16px;
   text-align: right;
   background-color: var(--dark);
-  color: var(--light);
+}
+
+.dialer input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  padding: 16px;
+  text-align: right;
+  background-color: var(--dark);
+  color: #fff;
   font-size: 24px;
   font-weight: 300;
 }

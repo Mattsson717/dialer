@@ -36,7 +36,16 @@ main {
     padding: 16px;
     text-align: right;
     background-color: var(--dark);
-    color: var(--light);
+  }
+
+  input {
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 16px;
+    text-align: right;
+    background-color: var(--dark);
+    color: #fff;
     font-size: 24px;
     font-weight: 300;
   }
