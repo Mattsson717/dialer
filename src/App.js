@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 
 function App() {
   const [digit, setDigit] = useState('');
-  // const [sum, setSum] = useState('');
 
   const updateDisplay = (value) => {
     setDigit(digit + value);
   };
-
-  console.log(typeof digit);
 
   const dialBtns = () => {
     const numbers = [];
@@ -45,12 +42,7 @@ function App() {
       <section className='dialer'>
         <div className='display'>
           <form>
-            <input
-              type='text'
-              value={digit || '0'}
-              id='output'
-              readOnly
-            ></input>
+            <input type='text' value={digit || '0'} id='output' readOnly />
           </form>
         </div>
         <div className='operator'>
