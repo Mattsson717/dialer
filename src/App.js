@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function App() {
   const [digit, setDigit] = useState('');
-  const [sum, setSum] = useState('');
+  // const [sum, setSum] = useState('');
 
   const updateDisplay = (value) => {
     setDigit(digit + value);
@@ -26,6 +26,7 @@ function App() {
   const calculate = () => {
     setDigit(
       digit
+        .replace(/[#*]/gi, '')
         .toString()
         .split('')
         .map(Number)
