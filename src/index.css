@@ -59,6 +59,7 @@ main {
   color: #fff;
   font-size: 24px;
   font-weight: 300;
+  width: 100%;
 }
 
 .dialer button {
@@ -73,6 +74,12 @@ main {
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+@media (max-width: 480px) {
+  .dialer button {
+    font-size: 15px;
+  }
 }
 
 .dialer button:hover {

@@ -48,6 +48,7 @@ main {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
+    width: 100%;
   }
 
   button {
@@ -59,6 +60,10 @@ main {
     padding: 16px;
     cursor: pointer;
     transition: 0.4s;
+
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
   }
   button:hover {
     opacity: 0.9;
